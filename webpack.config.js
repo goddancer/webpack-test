@@ -7,6 +7,22 @@ module.exports = {
     filename: "js/[name].bundle.js",
     // publicPath: "http://goddancer.com/"
   },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        options: {
+          "presets": ['env']
+        }
+      },
+      {
+        test: /\.html/,
+        loader: "html-loader"
+      }
+    ]
+  },
   plugins: [
     new htmlWebpackPlugin({
       filename: 'index.html',

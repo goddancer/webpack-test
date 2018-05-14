@@ -170,3 +170,35 @@ new htmlWebpackPlugin({
   title: 'use htmlWebpackPlugin inline'
 }),
 ```
+### 3、loaders
+[参考文档](http://babeljs.io/docs/setup/#installation)
+```
+module: {
+    rules: [
+      {
+        test: /\.js$/, // 正则匹配文件
+        exclude: /node_modules/, // 排除目录
+        loader: "babel-loader", // 指定loader
+        options: {
+          "presets": ['env'] // 像loader传参，解析es2015、16、17及最新语法
+        }
+      },
+      {
+        test: /\.html/,
+        loader: "html-loader" // 指定html-loader
+      }
+    ]
+  },
+```
+options可以在.babelrc文件中设置
+```
+{
+  "presets": ["env"]
+}
+```
+或者在package.json中设置
+```
+"babel": {
+  "presets": ["env"]
+},
+```
