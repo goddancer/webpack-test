@@ -2,6 +2,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
+  context: __dirname,
   entry: './src/app.js',
   output: {
     path: __dirname + "/dist",
@@ -22,9 +23,29 @@ module.exports = {
       {
         test: /\.html/,
         loader: "html-loader"
+      },
+      {
+        test: /\.css/,
+        loaders: ['style-loader', 'css-loader', {
+          loader: 'postcss-loader',
+          options: {
+            indent: 'postcss',
+            plugins: (loader) => [
+              require('postcss-import')({root: loader.resourcePath}),
+              require('autoprefixer')({
+                broswers: ['last 5 versions']
+              })
+            ]
+          }
+        }]
       }
     ]
   },
+  postcss: [
+    require('autoprefixer')({
+      broswers: ['last 5 versions']
+    })
+  ],
   plugins: [
     new htmlWebpackPlugin({
       filename: 'index.html',

@@ -207,3 +207,20 @@ options可以在.babelrc文件中设置
 exclude: path.resolve(__dirname, 'node_modules'), // 排除。通过node内部集成path函数，解析相对路径生成绝对路径
 include: path.resolve(__dirname, 'src'), // 指定
 ```
+#### postcss-loader
+[参考文档](https://www.npmjs.com/package/postcss-loader)
+```
+npm install postcss-loader --save-dev // 后处理css-loader，安装以后可以安装css的预处理插件
+npm install autoprefixer --save-dev // 自动书写浏览器前缀
+```
+
+```
+loaders: ['style-loader', 'css-loader', {
+          loader: 'postcss-loader',
+          options: {
+            plugins: [
+              require('autoprefixer')({broswers: ['last 5 versions']})
+            ]
+          }
+        }]
+```
