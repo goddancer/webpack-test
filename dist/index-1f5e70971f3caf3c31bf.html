@@ -7,27 +7,11 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Cache-control" content="no-cache">
   <meta http-equiv="Cache" content="no-cache">
-  <title><%= htmlWebpackPlugin.options.title %></title>
-</head>
+  <title>webpack is awesome</title>
+<script type="text/javascript" src="js/main-b95b62f4dafed4f3860c.js"></script><script type="text/javascript" src="js/a-b95b62f4dafed4f3860c.js"></script></head>
 <body>
 <div id="">
-  <%= htmlWebpackPlugin.options.date %>
-  <!--
-      因为htmlWebpackPlugin采用的是模板引擎的语法，所以可以使用js语句
-  -->
-  <% for (var item in htmlWebpackPlugin){ %>
-  <%= item %>
-  <% } %>
-
-  <!--查看files参数-->
-  <% for (var item in htmlWebpackPlugin.files){ %>
-  <%= item %> ：<%= JSON.stringify(htmlWebpackPlugin.files[item]) %>
-  <% } %>
-
-  <!--查看options参数-->
-  <% for (var item in htmlWebpackPlugin.options){ %>
-  <%= item %> ：<%= JSON.stringify(htmlWebpackPlugin.options[item]) %>
-  <% } %>
+  Mon May 14 2018 12:18:41 GMT+0800 (中国标准时间)
 </div>
 <script>
   document.documentElement.style.fontSize = document.documentElement.clientWidth / 18.75 + 'px';
