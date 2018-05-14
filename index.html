@@ -11,23 +11,6 @@
 </head>
 <body>
 <div id="">
-  <%= htmlWebpackPlugin.options.date %>
-  <!--
-      因为htmlWebpackPlugin采用的是模板引擎的语法，所以可以使用js语句
-  -->
-  <% for (var item in htmlWebpackPlugin){ %>
-  <%= item %>
-  <% } %>
-
-  <!--查看files参数-->
-  <% for (var item in htmlWebpackPlugin.files){ %>
-  <%= item %> ：<%= JSON.stringify(htmlWebpackPlugin.files[item]) %>
-  <% } %>
-
-  <!--查看options参数-->
-  <% for (var item in htmlWebpackPlugin.options){ %>
-  <%= item %> ：<%= JSON.stringify(htmlWebpackPlugin.options[item]) %>
-  <% } %>
 </div>
 <script>
   document.documentElement.style.fontSize = document.documentElement.clientWidth / 18.75 + 'px';
