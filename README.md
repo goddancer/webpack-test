@@ -202,3 +202,8 @@ options可以在.babelrc文件中设置
   "presets": ["env"]
 },
 ```
+排除目录与解析目录
+```
+exclude: path.resolve(__dirname, 'node_modules'), // 排除。通过node内部集成path函数，解析相对路径生成绝对路径
+include: path.resolve(__dirname, 'src'), // 指定
+```
