@@ -1,6 +1,6 @@
 import tpl from './layer.html';
 import './layer.less';
-import './test.scss';
+// import './test.scss';
 
 function layer(){
   return {

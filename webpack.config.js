@@ -69,12 +69,20 @@ module.exports = {
           }
         }, 'sass-loader']
       },
-      {
+      /*{
         test: /\.(png|jpg|jpeg|gif|svg)$/i,
-        loader: 'file-loader',
+        loader: 'url-loader',
         query: {
-          name: 'src/assets/[name]-[hash:5].[ext]'
+          limit: 200000,
+          name: 'assets/[name]-[hash:5].[ext]'
         }
+      },*/
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        loaders: [
+          'url-loader?limit=20000&name=assets/[name]-[hash:5].[ext]',
+          'image-webpack-loader'
+        ]
       }
     ]
   },

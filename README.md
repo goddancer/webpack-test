@@ -286,8 +286,48 @@ npm install file-loader --save-dev // 通过file-loader
 rules: [
   {
     test: /\.(png|jpg|jpeg|gif|svg)$/i,
-    loader: 'file-loader'
+    loader: 'file-loader',
+    query: {
+      name: 'assets/[name]-[hash:5].[ext]' // 可以指定图片打包后的路径（放在assets文件夹）及名称
+    }
   }
+]
+```
+解决页面或者tpl模板中图片引入路径的问题，可以采用require的方法
+```
+<img src="${ require('./src/assets/hh.jpeg') }" alt="">
+```
+### url-loader
+url-loader可以指定文件或者图片打包的时候的limit，如果大于指定大小的话，会把文件或者图片转化为base64编码。
+
+通过base64编码加载的图片不会再浏览器缓存，所以频繁需要的小图片依然建议采用http请求的方式。
+```
+npm install url-loader --save-dev
+
+rules: [
+  {
+    test: /\.(png|jpg|jpeg|gif|svg)$/i,
+    loader: 'url-loader',
+    query: {
+      limit: 20000, // 20k
+      name: 'assets/[name]-[hash:5].[ext]'
+    }
+  }
+]
+```
+### image-webpack-loader
+对图片进行压缩，结合file-loader或者url-loader进行使用
+```
+npm install image-webpack-loader --save-dev
+
+rules: [
+    {
+      test: /\.(png|jpe?g|gif|svg)$/i, // jpg与jpeg的综合写法
+      loaders: [
+        'url-loader?limit=20000&name=assets/[name]-[hash:5].[ext]', // 写法
+        'image-webpack-loader'
+      ]
+    }
 ]
 ```
 ---
