@@ -89,7 +89,7 @@ eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/_css
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/_css-loader@0.28.11@css-loader/lib/css-base.js */ \"./node_modules/_css-loader@0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \".flex-div1 {\\n  display: -ms-flexbox;\\n  display: flex;\\n}\\n.layer {\\n  width: 600px;\\n  height: 200px;\\n  background: green;\\n}\\n.layer div {\\n  width: 400px;\\n  height: 100px;\\n  border: 2px solid #cc00cc;\\n}\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/components/layer/layer.less?./node_modules/_css-loader@0.28.11@css-loader!./node_modules/_postcss-loader@2.1.5@postcss-loader/lib??ref--7-2!./node_modules/_less-loader@4.1.0@less-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/_css-loader@0.28.11@css-loader/lib/css-base.js */ \"./node_modules/_css-loader@0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \".flex-div1 {\\n  display: -ms-flexbox;\\n  display: flex;\\n}\\n.layer {\\n  width: 600px;\\n  height: 200px;\\n  background: green;\\n}\\n.layer div {\\n  width: 300px;\\n  height: 100px;\\n  border: 2px solid #cc00cc;\\n}\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/components/layer/layer.less?./node_modules/_css-loader@0.28.11@css-loader!./node_modules/_postcss-loader@2.1.5@postcss-loader/lib??ref--7-2!./node_modules/_less-loader@4.1.0@less-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -145,7 +145,7 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _layer = __webpack_require__(/*! ./components/layer/layer */ \"./src/components/layer/layer.js\");\n\nvar _layer2 = _interopRequireDefault(_layer);\n\n__webpack_require__(/*! ./css/common.css */ \"./src/css/common.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar App = function App() {\n  console.log(_layer2.default);\n};\nnew App();\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("\n\nvar _layer = __webpack_require__(/*! ./components/layer/layer */ \"./src/components/layer/layer.js\");\n\nvar _layer2 = _interopRequireDefault(_layer);\n\n__webpack_require__(/*! ./css/common.css */ \"./src/css/common.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar App = function App() {\n  var dom = document.getElementById('app');\n  var layer = new _layer2.default();\n  dom.innerHTML = layer.tpl;\n  console.log(_layer2.default);\n};\nnew App();\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
