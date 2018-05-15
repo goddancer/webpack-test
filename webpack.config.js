@@ -21,11 +21,11 @@ module.exports = {
         }
       },
       {
-        test: /\.html/,
+        test: /\.html$/,
         loader: "html-loader"
       },
       {
-        test: /\.css/,
+        test: /\.css$/,
         loaders: ['style-loader', 'css-loader', {
           loader: 'postcss-loader',
           options: {
@@ -38,6 +38,36 @@ module.exports = {
             ]
           }
         }]
+      },
+      {
+        test: /\.less$/,
+        loaders: ['style-loader', 'css-loader', {
+          loader: 'postcss-loader',
+          options: {
+            indent: 'postcss',
+            plugins: (loader) => [
+              require('postcss-import')({root: loader.resourcePath}),
+              require('autoprefixer')({
+                broswers: ['last 5 versions']
+              })
+            ]
+          }
+        }, 'less-loader']
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', {
+          loader: 'postcss-loader',
+          options: {
+            indent: 'postcss',
+            plugins: (loader) => [
+              require('postcss-import')({root: loader.resourcePath}),
+              require('autoprefixer')({
+                broswers: ['last 5 versions']
+              })
+            ]
+          }
+        }, 'sass-loader']
       }
     ]
   },

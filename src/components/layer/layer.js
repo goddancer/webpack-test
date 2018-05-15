@@ -1,4 +1,7 @@
-import tpl from './layer.html'
+import tpl from './layer.html';
+import './layer.less';
+import './test.scss';
+
 function layer(){
   return {
     name: 'layer',

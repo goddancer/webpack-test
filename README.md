@@ -235,6 +235,50 @@ rules: [
 
 npm install postcss-import postcss-loader --save-dev // postcss-import用来处理通过@import引入进来的样式
 ```
+#### 添加less文件的规则
+```
+npm install less less-loader --save-dev
+
+rules: [
+    {
+      test: /\.less$/,
+      loaders: ['style-loader', 'css-loader', {
+        loader: 'postcss-loader',
+        options: {
+          indent: 'postcss',
+          plugins: (loader) => [
+            require('postcss-import')({root: loader.resourcePath}),
+            require('autoprefixer')({
+              broswers: ['last 5 versions']
+            })
+          ]
+        }
+      }, 'less-loader']
+    }
+]
+```
+#### 添加sass文件的规则
+```
+npm install sass node-sass sass-loader --save-dev
+
+rules: [
+    {
+      test: /\.less$/,
+      loaders: ['style-loader', 'css-loader', {
+        loader: 'postcss-loader',
+        options: {
+          indent: 'postcss',
+          plugins: (loader) => [
+            require('postcss-import')({root: loader.resourcePath}),
+            require('autoprefixer')({
+              broswers: ['last 5 versions']
+            })
+          ]
+        }
+      }, 'sass-loader']
+    }
+]
+```
 ---
 ### bug&solution
 #### 1、htmlWebpackPlugin与html-loader冲突
