@@ -1,13 +1,11 @@
+@import './flex.css';
 HTML, body{
   margin:0;
   padding:0;
-  background: red;
+  background: green;
 }
 ul, li{
   margin:0;
   padding:0;
   list-style: none;
-}
-.flex-div{
-  display: flex;
 }

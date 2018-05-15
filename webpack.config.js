@@ -41,24 +41,11 @@ module.exports = {
       }
     ]
   },
-  postcss: [
-    require('autoprefixer')({
-      broswers: ['last 5 versions']
-    })
-  ],
   plugins: [
     new htmlWebpackPlugin({
       filename: 'index.html',
-      template: 'index.html',
-      inject: 'body',
-      title: 'webpack is awesome',
-      /*chunks: ['main', 'a'],
-      date: new Date(),
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        collapseInlineTagWhitespace: true
-      }*/
+      template: 'index.ejs',
+      title: 'loader is awesome'
     })
   ]
 };
