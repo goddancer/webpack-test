@@ -89,7 +89,7 @@ eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/_css
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/_css-loader@0.28.11@css-loader/lib/css-base.js */ \"./node_modules/_css-loader@0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \".flex-div1 {\\n  display: -ms-flexbox;\\n  display: flex;\\n}\\n.layer {\\n  width: 600px;\\n  height: 200px;\\n  background: green;\\n}\\n.layer div {\\n  width: 300px;\\n  height: 100px;\\n  border: 2px solid #cc00cc;\\n}\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/components/layer/layer.less?./node_modules/_css-loader@0.28.11@css-loader!./node_modules/_postcss-loader@2.1.5@postcss-loader/lib??ref--7-2!./node_modules/_less-loader@4.1.0@less-loader/dist/cjs.js");
+eval("var escape = __webpack_require__(/*! ../../../node_modules/_css-loader@0.28.11@css-loader/lib/url/escape.js */ \"./node_modules/_css-loader@0.28.11@css-loader/lib/url/escape.js\");\nexports = module.exports = __webpack_require__(/*! ../../../node_modules/_css-loader@0.28.11@css-loader/lib/css-base.js */ \"./node_modules/_css-loader@0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \".flex-div1 {\\n  display: -ms-flexbox;\\n  display: flex;\\n}\\n.layer {\\n  width: 600px;\\n  height: 200px;\\n  background: url(\" + escape(__webpack_require__(/*! ../../assets/hh.jpeg */ \"./src/assets/hh.jpeg\")) + \") no-repeat center top / 100% 100%;\\n}\\n.layer div {\\n  width: 300px;\\n  height: 100px;\\n  border: 2px solid #cc00cc;\\n}\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/components/layer/layer.less?./node_modules/_css-loader@0.28.11@css-loader!./node_modules/_postcss-loader@2.1.5@postcss-loader/lib??ref--7-2!./node_modules/_less-loader@4.1.0@less-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -112,6 +112,17 @@ eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/_
 /***/ (function(module, exports) {
 
 eval("/*\n\tMIT License http://www.opensource.org/licenses/mit-license.php\n\tAuthor Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\nmodule.exports = function(useSourceMap) {\n\tvar list = [];\n\n\t// return the list of modules as css string\n\tlist.toString = function toString() {\n\t\treturn this.map(function (item) {\n\t\t\tvar content = cssWithMappingToString(item, useSourceMap);\n\t\t\tif(item[2]) {\n\t\t\t\treturn \"@media \" + item[2] + \"{\" + content + \"}\";\n\t\t\t} else {\n\t\t\t\treturn content;\n\t\t\t}\n\t\t}).join(\"\");\n\t};\n\n\t// import a list of modules into the list\n\tlist.i = function(modules, mediaQuery) {\n\t\tif(typeof modules === \"string\")\n\t\t\tmodules = [[null, modules, \"\"]];\n\t\tvar alreadyImportedModules = {};\n\t\tfor(var i = 0; i < this.length; i++) {\n\t\t\tvar id = this[i][0];\n\t\t\tif(typeof id === \"number\")\n\t\t\t\talreadyImportedModules[id] = true;\n\t\t}\n\t\tfor(i = 0; i < modules.length; i++) {\n\t\t\tvar item = modules[i];\n\t\t\t// skip already imported module\n\t\t\t// this implementation is not 100% perfect for weird media query combinations\n\t\t\t//  when a module is imported multiple times with different media queries.\n\t\t\t//  I hope this will never occur (Hey this way we have smaller bundles)\n\t\t\tif(typeof item[0] !== \"number\" || !alreadyImportedModules[item[0]]) {\n\t\t\t\tif(mediaQuery && !item[2]) {\n\t\t\t\t\titem[2] = mediaQuery;\n\t\t\t\t} else if(mediaQuery) {\n\t\t\t\t\titem[2] = \"(\" + item[2] + \") and (\" + mediaQuery + \")\";\n\t\t\t\t}\n\t\t\t\tlist.push(item);\n\t\t\t}\n\t\t}\n\t};\n\treturn list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n\tvar content = item[1] || '';\n\tvar cssMapping = item[3];\n\tif (!cssMapping) {\n\t\treturn content;\n\t}\n\n\tif (useSourceMap && typeof btoa === 'function') {\n\t\tvar sourceMapping = toComment(cssMapping);\n\t\tvar sourceURLs = cssMapping.sources.map(function (source) {\n\t\t\treturn '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'\n\t\t});\n\n\t\treturn [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n\t}\n\n\treturn [content].join('\\n');\n}\n\n// Adapted from convert-source-map (MIT)\nfunction toComment(sourceMap) {\n\t// eslint-disable-next-line no-undef\n\tvar base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n\tvar data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;\n\n\treturn '/*# ' + data + ' */';\n}\n\n\n//# sourceURL=webpack:///./node_modules/_css-loader@0.28.11@css-loader/lib/css-base.js?");
+
+/***/ }),
+
+/***/ "./node_modules/_css-loader@0.28.11@css-loader/lib/url/escape.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/_css-loader@0.28.11@css-loader/lib/url/escape.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = function escape(url) {\n    if (typeof url !== 'string') {\n        return url\n    }\n    // If url is already wrapped in quotes, remove them\n    if (/^['\"].*['\"]$/.test(url)) {\n        url = url.slice(1, -1);\n    }\n    // Should url be wrapped?\n    // See https://drafts.csswg.org/css-values-3/#urls\n    if (/[\"'() \\t\\n]/.test(url)) {\n        return '\"' + url.replace(/\"/g, '\\\\\"').replace(/\\n/g, '\\\\n') + '\"'\n    }\n\n    return url\n}\n\n\n//# sourceURL=webpack:///./node_modules/_css-loader@0.28.11@css-loader/lib/url/escape.js?");
 
 /***/ }),
 
@@ -149,6 +160,17 @@ eval("\n\nvar _layer = __webpack_require__(/*! ./components/layer/layer */ \"./s
 
 /***/ }),
 
+/***/ "./src/assets/hh.jpeg":
+/*!****************************!*\
+  !*** ./src/assets/hh.jpeg ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"hh.jpeg\";\n\n//# sourceURL=webpack:///./src/assets/hh.jpeg?");
+
+/***/ }),
+
 /***/ "./src/components/layer/layer.html":
 /*!*****************************************!*\
   !*** ./src/components/layer/layer.html ***!
@@ -156,7 +178,7 @@ eval("\n\nvar _layer = __webpack_require__(/*! ./components/layer/layer */ \"./s
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = \"<div class=\\\"layer\\\">\\r\\n  <div> this is a layer</div>\\r\\n</div>\";\n\n//# sourceURL=webpack:///./src/components/layer/layer.html?");
+eval("module.exports = \"<div class=\\\"layer\\\">\\r  <div> this is a layer</div>\\r</div>\"\n\n//# sourceURL=webpack:///./src/components/layer/layer.html?");
 
 /***/ }),
 

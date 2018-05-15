@@ -4,7 +4,7 @@
 .layer {
   width: 600px;
   height: 200px;
-  background: green;
+  background: url("../../assets/hh.jpeg") no-repeat center top / 100% 100%;
 }
 .layer div {
   width: 300px;

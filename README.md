@@ -279,6 +279,17 @@ rules: [
     }
 ]
 ```
+#### 添加图片处理规则
+```
+npm install file-loader --save-dev // 通过file-loader
+
+rules: [
+  {
+    test: /\.(png|jpg|jpeg|gif|svg)$/i,
+    loader: 'file-loader'
+  }
+]
+```
 ---
 ### bug&solution
 #### 1、htmlWebpackPlugin与html-loader冲突

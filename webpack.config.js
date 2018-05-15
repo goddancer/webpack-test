@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: __dirname + "/dist",
     filename: "js/[name].bundle.js",
-    // publicPath: "http://goddancer.com/"
+    // publicPath: "dist/"
   },
   module: {
     rules: [
@@ -22,7 +22,7 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        loader: "html-loader"
+        loader: "html-withimg-loader"
       },
       {
         test: /\.css$/,
@@ -68,6 +68,13 @@ module.exports = {
             ]
           }
         }, 'sass-loader']
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg)$/i,
+        loader: 'file-loader',
+        query: {
+          name: 'src/assets/[name]-[hash:5].[ext]'
+        }
       }
     ]
   },
