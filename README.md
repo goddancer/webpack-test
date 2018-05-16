@@ -1,4 +1,4 @@
-## webpack4.X打包配置
+﻿## webpack4.X打包配置
 ### 1、配置webpack4.X环境
 [参考帖子](https://blog.csdn.net/u012443286/article/details/79504289)
 #### webpack全局环境安装
@@ -263,7 +263,7 @@ npm install sass node-sass sass-loader --save-dev
 
 rules: [
     {
-      test: /\.less$/,
+      test: /\.scss$/,
       loaders: ['style-loader', 'css-loader', {
         loader: 'postcss-loader',
         options: {
